@@ -60,6 +60,9 @@ public:
   // an image in plain PPM format
   friend std::istream& operator>>(std::istream& is, ImagePPM& image);
 
+  void RemoveHoriz(const int* horiz_seam);
+  void RemoveVert(const int* vert_seam);
+
   /**
    * Add any helper methods you may need
    */
