@@ -116,6 +116,28 @@ private:
   ImagePPM image_;
   int height_ = 0;
   int width_ = 0;
+  int DeltaRow(int row, int col) const;
+  int RedRow(int row, int col) const;
+  int BlueRow(int row, int col) const;
+  int GreenRow(int row, int col) const;
+  int DeltaCol(int row, int col) const;
+  int RedCol(int row, int col) const;
+  int BlueCol(int row, int col) const;
+  int GreenCol(int row, int col) const;
+  bool CheckLeft(int col) const;
+  bool CheckRight(int col) const;
+  bool CheckTop(int row) const;
+  bool CheckBottom(int row) const;
+  void FillHorSeamArray(int** seam_arr) const;
+  void GetHorizSeamHelper(int** seam_arr, int* seam_arr_single) const;
+  void FillVertSeamArray(int** seam_arr) const;
+  void GetVertSeamHelper(int** seam_arr, int* seam_arr_single) const;
+  void ClearSeamArray(int** seam_arr) const;
+  int Minimum(int first, int second, int third) const;
+  int Minimum(int first, int second) const;
+  int MinIdx(int first, int second) const;
+  int MinIdx(int first, int second, int third) const;
+  const int kMaxInt = 2147483647;
 
   /**
    * Add any helper methods you may need
